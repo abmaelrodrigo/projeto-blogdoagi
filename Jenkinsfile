@@ -44,23 +44,10 @@ pipeline {
             }
         }
         
-        stage('Deploy html site'){
+        stage('Deploy'){
             steps {
                 echo "Deploying"
                  
-                // publish html
-  
-                publishHTML (target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: false,
-                    reportDir: '',
-                    reportFiles: 'index.html',
-                    reportName: "Cypress Report",
-                    reportTitles: '', 
-                    useWrapperFileDirectly: true
-                ])
-   
             }
         }
     }
