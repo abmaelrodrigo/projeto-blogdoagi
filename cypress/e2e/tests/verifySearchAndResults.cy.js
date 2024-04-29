@@ -49,7 +49,7 @@ context("Verify basic article searche on the Blog do Agi website", () => {
 
     })
 
-    it.only('Verify user can navigate to an article', () => {
+    it('Verify user can navigate to an article', () => {
 
         // Given the user is on the search result page
         header.searchForATerm(searchTerms[2]);
