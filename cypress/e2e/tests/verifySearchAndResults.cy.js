@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+import articlePage from "../pages/ArticlePage/articlePage";
 import { default as header } from "../pages/Homepage/header";
 import searchResultPage from "../pages/SearchResultPage/searchResultPage";
 
@@ -30,7 +31,7 @@ context("Verify basic article searche on the Blog do Agi website", () => {
 
     })
 
-    it.only('Verify the searching for a non-existent term', () => {
+    it('Verify the searching for a non-existent term', () => {
 
         // Given the Blog do Agi home page is displayed
 
@@ -45,6 +46,20 @@ context("Verify basic article searche on the Blog do Agi website", () => {
 
         // And the search result does not contain any article 
         searchResultPage.verifyNothingWasFound(nothigWasFoundPhrase);
+
+    })
+
+    it.only('Verify user can navigate to an article', () => {
+
+        // Given the user is on the search result page
+        header.searchForATerm(searchTerms[2]);
+        searchResultPage.verifySearchURL(searchTerms[2]);
+
+        // When user goes to the first article page
+        // Then the the first article title is present on the page, and on the breadcrumbs 
+        searchResultPage.goToAndVerifyArticlePage();
+
+
 
         
 
