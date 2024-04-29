@@ -24,11 +24,11 @@ class SearchResultPage {
 
     }
 
-    clickOnMoreResultsButton() {
-        cy.get('[id="more-results"]')
-            .click();
-    }
+    verifyNothingWasFound(nothigWasFoundPhrase){
+        cy.get('[class="page-content"]')
+        .should('contain',nothigWasFoundPhrase)
 
+    }
 
 
 
