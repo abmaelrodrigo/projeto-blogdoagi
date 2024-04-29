@@ -59,9 +59,5 @@ context("Verify basic article searche on the Blog do Agi website", () => {
         // Then the the first article title is present on the page, and on the breadcrumbs 
         searchResultPage.goToAndVerifyArticlePage();
 
-
-
-        
-
     })
 })
