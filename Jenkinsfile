@@ -16,7 +16,7 @@ pipeline {
     agent any
     
     //The tools envrionment will allow to run npm
-    tools {nodejs "nodejs"}
+    tools {nodejs "Node21"}
     
    
     //The stage directive goes in the stages section and should contain a steps section, an optional agent section, 
