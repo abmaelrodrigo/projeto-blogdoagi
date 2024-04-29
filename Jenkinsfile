@@ -47,9 +47,7 @@ pipeline {
         stage('Deploy html site'){
             steps {
                 echo "Deploying"
-                 // Archive the built artifacts
-                archive (includes: 'pkg/*.gem')
-
+                 
                 // publish html
   
                 publishHTML (target: [
