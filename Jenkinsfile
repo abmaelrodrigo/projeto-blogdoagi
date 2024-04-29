@@ -53,10 +53,12 @@ pipeline {
                 publishHTML (target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: 'coverage',
+                    keepAll: false,
+                    reportDir: '',
                     reportFiles: 'index.html',
-                    reportName: "RCov Report"
+                    reportName: "Cypress Report",
+                    reportTitles: '', 
+                    useWrapperFileDirectly: true
                 ])
    
             }

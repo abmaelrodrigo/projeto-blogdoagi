@@ -7,7 +7,7 @@ import searchResultPage from "../pages/SearchResultPage/searchResultPage";
 var nothigWasFoundPhrase = 'Lamentamos, mas nada foi encontrado para sua pesquisa, tente novamente com outras palavras.'
 
 
-context("Verify basic article searche on the Blog do Agi website", () => {
+context("Verify basic article searches on the Blog do Agi website", () => {
     beforeEach(() => {
         cy.visit('https://blogdoagi.com.br/');
     })
