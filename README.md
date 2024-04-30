@@ -1,5 +1,7 @@
 # projeto-blogdoagi
 
+👋 Seja bem vindo(a)!
+
 Este projeto foi realizado para um test técnico de projetos de automação.
 
 O projeto consiste em acessar o site https://blogdoagi.com.br/, e pesquisar  artigos do blog (lupa no canto superior esquerdo).
