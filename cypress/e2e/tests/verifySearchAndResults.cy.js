@@ -1,18 +1,16 @@
 /// <reference types="cypress" />
 
-import articlePage from "../pages/ArticlePage/articlePage";
-import { default as header } from "../pages/Homepage/header";
-import searchResultPage from "../pages/SearchResultPage/searchResultPage";
+import header from "../../pages/Homepage/header";
+import searchResultPage from "../../pages/SearchResultPage/searchResultPage";
 
 var nothigWasFoundPhrase = 'Lamentamos, mas nada foi encontrado para sua pesquisa, tente novamente com outras palavras.'
-
 
 context("Verify basic article searches on the Blog do Agi website", () => {
     beforeEach(() => {
         cy.visit('https://blogdoagi.com.br/');
     })
 
-    var searchTerms = ["Rural", "brigadeiro", "FGTS"];
+    var searchTerms = ["seguro de vida", "brigadeiro", "FGTS"];
 
     it('Verify search for a term', () => {
         // Given the Blog do Agi home page is displayed

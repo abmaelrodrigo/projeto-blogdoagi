@@ -5,6 +5,7 @@ class SearchResultPage {
     verifySearchResultTitle(input) {
 
         cy.title().should('include', input);
+        
 
     }
 
@@ -13,14 +14,18 @@ class SearchResultPage {
 
         cy.get('[class="post-content ast-width-md-6"]')
             .first()
-            .find(('[class="entry-title ast-blog-single-element"]'))
-            .should('contain', input);
+            .find('[rel="bookmark"]').then($articleProp => {
+                var articleTitle = ($articleProp[0].innerText).toLowerCase();
+                expect(articleTitle).to.contain(input.toLowerCase());
 
-    }
+            })
+
+
+    } 
 
     verifySearchURL(input) {
         cy.url().then(($url) => {
-            cy.wrap($url).should('contain', input);
+            cy.wrap($url).should('contain', input.replace(/\s+/g, '+'));
         })
 
     }
@@ -34,7 +39,6 @@ class SearchResultPage {
     goToAndVerifyArticlePage() {
         cy.get('[class="post-content ast-width-md-6"]')
             .first()
-            .as('firstArticle')
             .find('[rel="bookmark"]').then($articleProp => {
                 var articleTitle = $articleProp[0].innerText;
                 cy.visit($articleProp[0].href);
