@@ -51,12 +51,14 @@ pipeline {
             }
         }
 
-        post {
+       
+    }
+
+     post {
             always {
         junit 'results/cypress-report.xml'
     }
 }
-    }
 
   
 }
